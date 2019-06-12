@@ -81,10 +81,10 @@ c(4) = ~c(4);
 disp('Distancia de Hamming para cada palabra')
 d3 = d3'
 
-%% Act 3 
+%% Act 3 y 6
 clc;
-%Generacion de las matrices para el codigo Hamming (7,4)
-m = 3;
+%Generacion de las matrices para el codigo Hamming 
+m = 5;
 [H,G,n,k] = hammgen(m);
 
 %Ajuste de las matrices
@@ -99,7 +99,9 @@ H = H_t';
 G(:,(k+1):n) = G(:,1:m);
 G(:,1:k) = eye(k);
 
-%Ejemplo 
+%Extraccion de P
+P = G(:,(k+1):n);
+%% Ejemplo 
 M = [1 0 1 0];
 P = G(:,(k+1):n);
 C = mod(M*P,2);
